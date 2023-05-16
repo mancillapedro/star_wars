@@ -1,0 +1,96 @@
+.rangeLine {
+    --item__body--columns: 1;
+    --item__divider--width: 30%;
+    --item__divider--margin-left: 0.5rem;
+    --item__divider--margin-right: 0.5rem;
+}
+
+.rangeLine__item,
+.rangeLine__item__divider,
+.rangeLine__item__body {
+    display: flex;
+}
+
+.rangeLine__item {
+    align-items: stretch;
+}
+
+.rangeLine__item__divider {
+    position: relative;
+    align-items: center;
+    justify-content: end;
+    width: var(--item__divider--width);
+}
+
+.rangeLine__item__divider::after,
+.rangeLine__item__divider::before {
+    content: "";
+    margin-left: var(--item__divider--margin-left);
+    margin-right: var(--item__divider--margin-right);
+}
+
+.rangeLine__item__divider::before {
+    background-color: #eaeaea;
+    position: absolute;
+    height: 100%;
+    right: 5px;
+    width: 3px;
+    z-index: -1;
+}
+
+.rangeLine__item__divider::after {
+    background-color: #f1c40f;
+    border-radius: 50%;
+    height: 13px;
+    width: 13px;
+}
+
+.rangeLine__item__body {
+    flex-wrap: wrap;
+    width: calc(100% - var(--item__divider--width));
+}
+
+.rangeLine__item__body>* {
+    width: calc(100% / var(--item__body--columns));
+}
+
+@media (min-width: 576px) {
+    .rangeLine {
+        --item__body--columns: 1;
+        --item__divider--width: 25%;
+        --item__divider--margin-left: 0.75rem;
+        --item__divider--margin-right: 0.75rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .rangeLine {
+        --item__body--columns: 2;
+        --item__divider--width: 20%;
+        --item__divider--margin-left: 1rem;
+        --item__divider--margin-right: 1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .rangeLine {
+        --item__divider--width: 15%;
+        --item__divider--margin-left: 1.25rem;
+        --item__divider--margin-right: 1.25rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .rangeLine {
+        --item__body--columns: 3;
+        --item__divider--width: 10%;
+        --item__divider--margin-left: 1.5rem;
+        --item__divider--margin-right: 1.5rem;
+    }
+}
+
+/* @media (min-width: 1400px) {
+    .rangeLine {
+        --item__body--columns: 3;
+    }
+} */

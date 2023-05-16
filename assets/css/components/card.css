@@ -1,0 +1,41 @@
+.card {
+    --card__before--background-color: white;
+}
+
+.card.card--red {
+    --card__before--background-color: red;
+}
+
+.card.card--green {
+    --card__before--background-color: green;
+}
+
+.card.card--blue {
+    --card__before--background-color: blue;
+}
+
+.card {
+    padding: 1rem;
+}
+
+.card__body {
+    display: flex;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card__body::before {
+    content: "";
+    margin: 0 1rem;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: var(--card__before--background-color);
+    height: 40px;
+    width: 40px;
+}
+
+.card__body:hover {
+    box-shadow: none;
+}
