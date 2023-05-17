@@ -6,10 +6,10 @@ const getPeople = function* (card_generator) {
 
     if (state) return;
 
-    let [start, end, _] = range.split(',').map(Number)
-    for (start; start <= end; start++) {
+    const [start, end, _] = range.split(',').map(Number)
+    for (let i = start; i <= end; i++) {
         card_generator.dataset.state = "loading"
-        yield swapi(start).then(data => {
+        yield swapi(i).then(data => {
             try {
                 card_generator.parentElement.insertAdjacentHTML(
                     'beforeend',
