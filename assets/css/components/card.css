@@ -1,3 +1,9 @@
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .card {
     --card__body--padding: .5rem;
     --card__body-before--background-color: white;
@@ -6,37 +12,34 @@
 }
 
 .card.card--red {
-    --card__body-before--background-color: red;
+    --card__body-before--background-color: #fa8071;
 }
 
 .card.card--green {
-    --card__body-before--background-color: green;
+    --card__body-before--background-color: #90ee90;
 }
 
 .card.card--blue {
-    --card__body-before--background-color: blue;
+    --card__body-before--background-color: #87cefa;
 }
 
 .card {
     padding: 1rem;
 }
 
-[data-state=""] .card__body:hover {
+[data-state="loading"] .card__body,
+[data-state]:not([data-state="loaded"]) .card__body:hover {
     box-shadow: none;
-}
-
-[data-state="loading"] .card__body {
-    opacity: 0.2;
-    transition: all 0.3s ease-in-out;
+    opacity: 0.5;
 }
 
 .card__body {
+    position: relative;
     display: flex;
     padding: var(--card__body--padding);
     border-radius: 8px;
-    border: 1px solid #eaeaea;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    transition: all 0.2s ease-in-out;
 }
 
 .card__body::before {
@@ -48,6 +51,13 @@
     height: var(--card__body-before--size);
     min-width: var(--card__body-before--size);
     width: var(--card__body-before--size);
+}
+
+[data-state="loading"] .card__body::before {
+    background-color: transparent;
+    border: 4px solid var(--card__body-before--background-color);
+    border-top-color: transparent;
+    animation: spin .5s linear infinite;
 }
 
 @media (min-width: 576px) {
