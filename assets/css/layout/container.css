@@ -1,5 +1,7 @@
 .container {
     --container--max-width: 100%;
+    --container__title--font-size: 1.5rem;
+    --container__title--width: 90%;
 }
 
 .container {
@@ -8,35 +10,49 @@
     max-width: var(--container--max-width);
 }
 
+.container__title {
+    width: var(--container__title--width);
+    margin: 1.5rem auto;
+}
+
 .container__title,
 .container__title * {
-    font-size: 1.5rem;
+    font-size: var(--container__title--font-size);
     font-weight: 700;
-    margin: 1.5rem auto;
     text-align: center;
 }
 
 @media (min-width: 576px) {
     .container {
         --container--max-width: 540px;
+        --container__title--font-size: 1.625rem;
+        --container__title--width: 80%;
     }
 }
 
 @media (min-width: 768px) {
     .container {
         --container--max-width: 720px;
+        --container__title--font-size: 1.75rem;
+        --container__title--width: 70%;
+
     }
 }
 
 @media (min-width: 992px) {
     .container {
         --container--max-width: 960px;
+        --container__title--font-size: 1.875rem;
+        --container__title--width: 60%;
     }
 }
 
 @media (min-width: 1200px) {
     .container {
         --container--max-width: 1140px;
+        --container__title--font-size: 2rem;
+        --container__title--width: 50%;
+
     }
 }
 

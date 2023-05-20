@@ -1,8 +1,8 @@
 .rangeLine {
     --item__body--columns: 1;
-    --item__divider--width: 30%;
+    --item__divider--width: 25%;
     --item__divider--margin-left: 0.5rem;
-    --item__divider--margin-right: 0.5rem;
+    --item__divider--margin-right: 0;
 }
 
 .rangeLine__item,
